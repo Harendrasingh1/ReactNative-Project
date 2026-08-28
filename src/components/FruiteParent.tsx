@@ -1,7 +1,7 @@
 import React, { createContext, useState } from 'react';
 import { Text, View } from 'react-native';
 import { FruitChild } from './FruitChild';
-
+// This is Test page for Context Provider
 export const FruitContext = createContext();
 
 const FruitParent = () => {
