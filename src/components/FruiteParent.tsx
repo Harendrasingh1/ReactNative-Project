@@ -42,7 +42,7 @@ const FruitParent = () => {
       <View>
         <Text
           style={{
-            backgroundColor: 'white',
+            backgroundColor: 'black',
             padding: 10,
             color: 'pink',
             fontSize: 25,
@@ -53,7 +53,7 @@ const FruitParent = () => {
         </Text>
         <Text
           style={{
-            backgroundColor: 'white',
+            backgroundColor: 'black',
             padding: 10,
             color: 'yellow',
             fontSize: 25,
