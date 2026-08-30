@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import { View, Text, Image, Button, TouchableOpacity, StyleSheet, ScrollView } from 'react-native';
+import { View, Text, Image, Button, TouchableOpacity, StyleSheet, ScrollView, TextInput } from 'react-native';
 import Parent from './src/components/parent';
 import FruitParent from './src/components/FruiteParent';
 import TestPage from './src/components/flatlist';
-
+import HandLingUserInput from './src/components/handlingUserInput';
 
 const App = () => {
     
@@ -12,8 +12,9 @@ const App = () => {
         // contentContainerStyle={{ gap:10}}
         //horizontal
         style={styles.contaoiner}> 
+            <HandLingUserInput/>
            {/* <Parent/> */}
-           <TestPage/>
+          {/* <TestPage/> */}
            {/* <FruitParent/> */}
             {/* <View style={[styles.box1, {backgroundColor: 'white'}]}/>
             <View style={styles.box2}/>
@@ -40,6 +41,11 @@ const App = () => {
 export default App;
 
 const styles = StyleSheet.create({
+    title: {
+        fontSize: 20,
+        fontWeight: 'bold',
+        color: 'black'
+    },
     contaoiner:{
         width: '100%',
         height: '100%',
