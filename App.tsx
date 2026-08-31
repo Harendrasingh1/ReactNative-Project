@@ -19,6 +19,10 @@ import Profile from './src/screens/profile';
 import Search from './src/screens/search';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import AntDesign from 'react-native-vector-icons/AntDesign';
+import Feather from 'react-native-vector-icons/Feather';
+import FontAwesome from 'react-native-vector-icons/FontAwesome';
+import HomeScreen from './src/dashboardProjectScreens/HomeScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -26,10 +30,32 @@ const Tab = createBottomTabNavigator();
 
 const  TabNavigator = () => {
   return (
-    <Tab.Navigator>
-      <Tab.Screen name="Home" component={Home} />
-      <Tab.Screen name="Profile" component={Profile} />
-      <Tab.Screen name="Search" component={Search} />
+    <Tab.Navigator initialRouteName='Home'
+    screenOptions={{ 
+        tabBarActiveTintColor: "red",
+        tabBarInactiveTintColor: "",
+        tabBarLabelStyle: { fontSize: 15, fontWeight: 'bold' },
+        tabBarStyle: { height: 80 },
+        }}>
+      <Tab.Screen 
+        name="Home" 
+        component={Home} 
+        options={{
+            tabBarIcon: () => (
+                <AntDesign name="home" size={30}  />
+            )
+        }}
+        />
+      <Tab.Screen name="Profile" component={Profile}  options={{
+            tabBarIcon: () => (
+                <FontAwesome name="user-secret" size={30} color="black" />
+            )
+        }}/>
+      <Tab.Screen name="Search" component={Search} options={{
+            tabBarIcon: () => (
+                <Feather name="search" size={30} color="blue" />
+            )
+        }} />
     </Tab.Navigator>
   );
 }
@@ -58,10 +84,13 @@ const Stacknavigation = () => {
 
 const App = () => {
   return (
-    <NavigationContainer>
-      {/* <Stacknavigation /> */}
-        <TabNavigator/>
-    </NavigationContainer>
+    <View>
+        <HomeScreen/>
+    </View>
+    // <NavigationContainer>
+    //   {/* <Stacknavigation /> */}
+    //     <TabNavigator/>
+    // </NavigationContainer>
     // <View
     // // contentContainerStyle={{ gap:10}}
     // //horizontal
