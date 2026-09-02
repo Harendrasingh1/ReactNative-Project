@@ -1,16 +1,15 @@
 import React from "react"
-import { Button, Text, View } from "react-native"
+import { Button, StyleSheet, Text, View } from "react-native"
 import Profile from "./profile"
 
-type HomeProps = {
-  navigation: any
-}
 
-const Home = ({navigation}: HomeProps) => {
+
+
+const Home = ({navigation}: {navigation: any}) => {
 
     return (
-        <View style={{height: '100%', width: '100%', justifyContent:'center', alignItems:'center'}}>
-            <Text style={{fontSize:20, fontWeight:'bold'}}>Home to Profile</Text>
+        <View style={styles.homecontaner}>
+            <Text style={styles.textStyle}>Home to Profile</Text>
             <Button title="Go to Profile" onPress={()=> navigation.navigate('Profile', {id:'1', name:'Harendra Singh', email:'harendra@example.com'})
             } />
         </View>
@@ -19,3 +18,10 @@ const Home = ({navigation}: HomeProps) => {
 }
 
 export default Home
+
+const styles = StyleSheet.create({
+   homecontaner:
+    {height: '100%', width: '100%', justifyContent:'space-around', alignItems:'center', flex:1},
+    textStyle: {fontSize:20, fontWeight:'bold'}
+    
+})

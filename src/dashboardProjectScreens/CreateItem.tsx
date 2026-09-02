@@ -85,7 +85,7 @@ const Create = ({ data, setData }) => {
                 <Pressable onPress={() => editItemHandler(item)}>
                   <Text style={styles.itemText}> Edit </Text>
                 </Pressable>
-                <Pressable onPress={() => deleteItemHandler(item)}>
+                <Pressable onPress={() => deleteItemHandler(item.id)}>
                   <Text style={styles.itemText}> Delete </Text>
                 </Pressable>
               </View>

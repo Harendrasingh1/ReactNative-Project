@@ -86,10 +86,11 @@ const App = () => {
   return (
     <View>
         <HomeScreen/>
+        {/* <TestPage/> */}
     </View>
     // <NavigationContainer>
-    //   {/* <Stacknavigation /> */}
-    //     <TabNavigator/>
+    //   <Stacknavigation />
+    //     {/* <TabNavigator/> */}
     // </NavigationContainer>
     // <View
     // // contentContainerStyle={{ gap:10}}
@@ -101,6 +102,7 @@ const App = () => {
     //   {/* <TestPage/> */}
     //    {/* <FruitParent/> */}
     //     {/* <View style={[styles.box1, {backgroundColor: 'white'}]}/>
+    //<View>
     //     <View style={styles.box2}/>
     //     <View style={styles.box3}/>
     //     <View style={styles.box1}/>
@@ -118,7 +120,7 @@ const App = () => {
     //     <View style={styles.box1}/>
     //     <View style={styles.box2}/>
     //     <View style={[styles.box3, {backgroundColor: 'pink'}]}/> */}
-    // </View>
+     //</View>
   );
 };
 
