@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { createContext, useEffect, useState } from 'react';
 import {
   View,
   Text,
@@ -13,7 +13,6 @@ import Parent from './src/components/parent';
 import FruitParent from './src/components/FruiteParent';
 import TestPage from './src/components/flatlist';
 import HandLingUserInput from './src/components/handlingUserInput';
-import Home from './src/screens/home';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Profile from './src/screens/profile';
 import Search from './src/screens/search';
@@ -23,6 +22,13 @@ import AntDesign from 'react-native-vector-icons/AntDesign';
 import Feather from 'react-native-vector-icons/Feather';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import HomeScreen from './src/dashboardProjectScreens/HomeScreen';
+import Home from './src/Home';
+import Sixth from './src/10Scressn/sixth';
+import Fifth from './src/10Scressn/fifth';
+import Fourth from './src/10Scressn/fourth';
+import Third from './src/10Scressn/third';
+import Second from './src/10Scressn/second';
+import First from './src/10Scressn/first';
 
 const Stack = createNativeStackNavigator();
 
@@ -81,13 +87,33 @@ const Stacknavigation = () => {
     </Stack.Navigator>
   );
 };
-
+const HomeStack = () => {
+    return (
+        <Stack.Navigator>
+            <Stack.Screen name="Home" component={Home} />
+            <Stack.Screen name="First" component={First} />
+            <Stack.Screen name="Second" component={Second} />
+            <Stack.Screen name="Third" component={Third} />
+            <Stack.Screen name="Fourth" component={Fourth} />
+            <Stack.Screen name="Fifth" component={Fifth} />
+            <Stack.Screen name="Sixth" component={Sixth} />
+        </Stack.Navigator>
+    );
+}
+export const HomeProvider = createContext<any>(null);    
 const App = () => {
+    const [count, setCount] = useState(1);
+    const [newText, setNewText] = useState('Initial Text');
+
+  console.log("Render");
+
   return (
-    <View>
-        <HomeScreen/>
+    <HomeProvider.Provider value={{count, newText, setCount, setNewText}} >
+    <NavigationContainer>
+        <HomeStack/>
         {/* <TestPage/> */}
-    </View>
+    </NavigationContainer>
+    </HomeProvider.Provider>
     // <NavigationContainer>
     //   <Stacknavigation />
     //     {/* <TabNavigator/> */}

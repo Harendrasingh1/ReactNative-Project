@@ -9,7 +9,7 @@ import {
   View,
 } from 'react-native';
 
-const Create = ({ data, setData }) => {
+const Create = ({ data, setData } : { data: any[], setData: any }) => {
   const [itemName, setItemName] = useState('');
   const [stock, setStock] = useState('');
   const [isEdit, setEdit] = useState(false);
@@ -97,6 +97,7 @@ const Create = ({ data, setData }) => {
     </View>
   );
 };
+
 
 export default Create;
 
